@@ -1,0 +1,630 @@
+<!doctype html>
+
+
+
+
+<html>
+
+<head>
+    <title>
+        <%=title%>
+    </title>
+    <meta name="keywords" content="APP、小程序、活科云、APP开发、APP制作、生鲜配送系统、电商APP开发、新零售软件系统" />
+    <meta name="description" content="「活科云」技术赋能商业领跑者！国内最早的APP开发公司之一，为企业提供生鲜、商超、外卖配送、到店生活、汽车后市场、知识付费、美妆等APP+小程序一体化解决方案，以开放性Pass平台及模块化的SaaS功能，赋能企业快速建立私域流量、精细化运营、提高效益，助力企业向数字化商业转型！">
+    <link rel="stylesheet" href="./website/stylesheets/index.3.1.0.css">
+    <link rel="stylesheet" href="./website/javascript/lib/Swiper-3.4.2/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="./website/common/images/font-icons/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    <link rel="shortcut icon" href="./website/common/images/favicon.ico">
+
+
+    <!--<link rel="stylesheet" href="/javascript/lib/selectUI/css/drop-down.css">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="index,follow" name="Baiduspider">
+    <meta content="index,follow" name="robots">
+
+    <!--fundebuger-->
+    <!--<script src="https://js.fundebug.cn/fundebug.0.3.5.min.js" apikey="9972fb57226b9445f62cd08fcdf8f74c3d2f6e2d64a18b908fd53bf9f339c3b0"></script>-->
+    <script src="./website/javascript/vendor/adaptive-master/js/adaptive.js"></script>
+
+    <script type="text/javascript">
+        function checkBrowser(v) {
+            var userAgent = navigator.userAgent.toLowerCase(),
+                low = false;
+            if (isChromium(userAgent)) {
+                low = chromium(userAgent, v.GG);
+            } else if (isWebkit(userAgent)) {
+                //            low = Safari(userAgent, v.Safari);
+            } else if (isFireFox(userAgent)) {
+                low = FireFox(userAgent, v.FF)
+            } else if (isIE) {
+                low = IE(v.IE)
+            } else {
+                low = true;
+            }
+            checkjump(low)
+        }
+
+        function checkjump(low) {
+            // if(low) window.location.href = "/outdatedbrowser" + window.location.search + "?version=001";
+            if (low) window.location.href = "/outdatedbrowser/zh_cn.html";
+        }
+
+        //    function Safari(userAgent, v) {
+        ////        var version = userAgent.match(/version\/([\d.]+)/);
+        //        console.log("safair"+ version);
+        //        return parseInt(version) < v;
+        //    }
+
+        function FireFox(userAgent, v) {
+            var version = userAgent.match(/firefox\/([\d.]+)/)[1];
+            return parseInt(version) < v;
+        }
+
+        function chromium(userAgent, v) {
+            var version = userAgent.match(/chrome\/([\d.]+)/)[1];
+            var versionNum = version.split(".")[0];
+            return parseInt(versionNum) < v;
+        }
+
+        function IE(v) {
+            var version = 999999;
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent);
+                version = parseInt(RegExp.$1);
+            } else if ("ActiveXObject" in window) {
+                version = 11;
+            }
+            return parseInt(version) < v;
+        };
+        // 判断是否为chrome内核浏览器
+        function isChromium(userAgent) {
+            var chromium = "mozilla/&&applewebkit/&&chrome/&&safari/".split("&&");
+            for (var i = 0; i < chromium.length; i++)
+                if (userAgent.indexOf(chromium[i]) < 0)
+                    return false;
+            return true;
+        }
+
+        // 判断是否为webkit内核浏览器
+        function isWebkit(userAgent) {
+            if (userAgent.indexOf("applewebkit/") < 0)
+                return false;
+            return true;
+        }
+
+        function isFireFox(userAgent) {
+            if (userAgent.indexOf("firefox/") < 0)
+                return false;
+            return true;
+        }
+
+        function isIE(userAgent) {
+            if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0))
+                return true;
+            return false;
+        }
+
+        //检查浏览器
+        checkBrowser({
+            IE: 9,
+            FF: 30,
+            GG: 20,
+            Safari: 4
+        });
+
+        // //隐身模式判断
+        // try {
+        //     window.localStorage.setItem('testkey', '');
+        // } catch (error) {
+        //     if (window.locale === 'zh') {
+        //         alert("请关闭隐身模式");
+        //     } else {
+        //         alert("Please exit private mode");
+        //     }
+        // }
+    </script>
+
+</head>
+
+<body>
+    <%- include("components/header") %>
+        <!--首页 banner 部分-->
+        <div class="leapCloud-banner index-banner">
+            <div class="mainStyle banner-content">
+                <div class="banner-content-left">
+                    <h1 class="header">HROSaaS、灵活用工SaaS</h1>
+                    <h1 class="header">助力人资企业数字化转型</h1>
+                    <p class="text">APP+小程序+公众号+智能硬件，全渠道一体化平台</p>
+                    <p class="text">从前端APP到后端ERP一站式打通业务全流程，实现全链路数字化运营管理</p>
+                    <div class="buttons">
+                        <a class="freeBtn" href="/console/v2/signup#/">免费试用</a>
+                    </div>
+                </div>
+                <div class="banner-content-right">
+                    <img src="../website/common/images/index/200721/banner_img4.png" srcset="../website/common/images/index/200721/banner_img4.png" alt="活科云APP开发">
+                </div>
+                <div class="banner-content-left-mobile">
+                    <img src="../website/common/images/index/200721/banner_img4.png" alt="活科云APP开发">
+                </div>
+                <div class="banner-content-right-mobile">
+                    <h1 class="header header-one">HROSaaS、灵活用工SaaS</h1>
+                    <h1 class="header">助力人资企业数字化转型</h1>
+                    <p class="text">APP+小程序+公众号+智能硬件，多渠道一体化平台</p>
+                    <p class="text">从前端APP到后端ERP一站式打通业务全流程</p>
+                    <p class="text">实现全链路数字化运营管理</p>
+                    <div class="buttons">
+                        <a class="freeBtn" href="/console/v2/signup#/">免费试用</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 全渠道，多功能获客，助力企业低成本快速建立私域流量 -->
+        <div class="module01-container rich-container whitebg index-whitebg">
+            <div class="module01-content">
+                <h1 class="module01-title fresh-module01-title">人资企业面临的难题</h1>
+                <h1 class="module01-title fresh-module01-title-mobile">全渠道开店</br>一站式实现多平台流量获取</h1>
+                <h2 class="module01-subtitle fresh-module01-title mb80">灵活用工、外包、派遣、社保代理，业务做的越大，问题越突显</h2>
+                <h2 class="module01-subtitle fresh-module01-title-mobile mb80-mobile">APP、公众号、小程序、收银机<br/>多个销售渠道一站式覆盖，打造企业私域流量平台</h2>
+                <img class="index-module01-img mb40" src="../website/common/images/index/200721/new_1_img@2x.png" alt="">
+                <img class="index-module01-img-mobile mb40-mobile" src="../website/common/images/index/200721/new_1_img@2x.png" alt="">
+            </div>
+        </div>
+        <!-- 上百种营销组合，轻松变现，提升企业效益 -->
+        <div class="module01-container rich-container rich-container-index">
+            <div class="module01-content">
+                <h1 class="module01-title fresh-module01-title mb80">六大核心模块、两大系统，提升业务效率，实现规模化增长</h1>
+                <h1 class="module01-title fresh-module01-title-mobile mb80-mobile">六大核心模块、两大系统</br>提升业务效率，实现规模化增长</h1>
+                <ul class="rich-lists combine-lists">
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_1_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_1_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">客户中心</h3>
+                    </li>
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_2_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_2_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">项目中心</h3>
+                    </li>
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_3_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_3_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">共享服务中心</h3>
+                    </li>
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_4_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_4_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">财务中心</h3>
+                    </li>
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_5_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_5_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">报表中心</h3>
+                    </li>
+                    <li>
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_6_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_6_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">员工自助中心</h3>
+                    </li>
+                    <li class="combine-lists__lastBottom">
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_7_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_7_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">招聘系统</h3>
+                    </li>
+                    <li class="combine-lists__lastBottom">
+                        <img class="rich-list-img-pc" src="../website/common/images/index/200721/new_2_8_img@2x.png" alt="">
+                        <img class="rich-list-img-mobile" src="../website/common/images/index/200721/new_2_8_img@2x.png" alt="">
+                        <h3 class="rich-list-h3">灵工系统</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 数字化会员系统，助力企业精准营销，高效管理 -->
+        <div class="module01-container member-container whitebg index-whitebg">
+            <div class="module01-content">
+                <h1 class="module01-title fresh-module01-title">企业多重痛点的解决方案</h1>
+                <h1 class="module01-title fresh-module01-title-mobile">企业多重痛点的解决方案</h1>
+                <h2 class="module01-subtitle fresh-module01-title mb80">模块化功能组合解决方案</br>灵活配置，一站式解决企业痛点</h2>
+                <h2 class="module01-subtitle fresh-module01-title-mobile mb80-mobile">模块化功能组合解决方案</br>灵活配置，一站式解决企业痛点</h2>
+                <img class="index-module01-img mb40" src="../website/common/images/index/200721/new_3_img@2x.png" alt="">
+                <img class="index-module01-img-mobile mb40-mobile" src="../website/common/images/index/200721/new_3_img@2x.png" alt="">
+            </div>
+        </div>
+        <!-- 做深行业，为商户提供数字化经营解决方案 -->
+        <div class="module01-container solution-container index-solution">
+            <div class="module01-content">
+                <h1 class="module01-title fresh-module01-title">做深行业，为商户提供数字化经营解决方案</h1>
+                <h1 class="module01-title fresh-module01-title-mobile">做深行业</br>为商户提供数字化经营解决方案</h1>
+                <p class="module01-text pc">融合核心APP开发技术和全新业务场景模式，助力企业服务升级</p>
+                <p class="module01-text mobile">融合核心APP开发技术和全新业务场景模式</br>助力企业服务升级</p>
+                <div class="solution-content solution-pc">
+                    <ul class="solution-list">
+                        <li>功能化</li>
+                        <li>流程化</li>
+                        <li>移动化</li>
+                        <li>数字化</li>
+                        <li>智能化</li>
+                        <li>国际化</li>
+                    </ul>
+                    <div class="solution-detail">
+                        <!-- 从手工/Excel作业方式进入到系统化 -->
+                        <div class="solution-detail-item">
+                            <h3 class="solution-detail-item-title">从手工/Excel作业方式进入到系统化</h3>
+                            <p class="solution-detail-item-text">通过对系统的运用，让整个公司的数据不再散落在各地，尤其员工数据、业务相关数据、财务相关数据能得到沉淀。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_1_1_icon_new.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/freshSolutionLanding" class="solution-btn">了解方案</a> -->
+                        </div>
+                        <!-- 通过工作流引擎，让企业各部门之间的协同变得简单 -->
+                        <div class="solution-detail-item">
+                            <h3 class="solution-detail-item-title">通过工作流引擎，让企业各部门之间的协同变得简单</h3>
+                            <p class="solution-detail-item-text">业务开展过程中的各类申请、审批，从线下低效沟通协调，到线上高效协同。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_2_1_icon_new.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/takeoutSolution" class="solution-btn">了解外卖方案</a> -->
+                        </div>
+                        <!-- 随时随地在手机上完成业务环节 -->
+                        <div class="solution-detail-item">
+                            <h3 class="solution-detail-item-title">随时随地在手机上完成业务环节</h3>
+                            <p class="solution-detail-item-text">为员工提供移动端自助服务，更具实效性、便捷性。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_5_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/beautySolution" class="solution-btn">了解方案</a> -->
+                        </div>
+                        <!-- 数据沉淀之后的清洗、挖掘分析 -->
+                        <div class="solution-detail-item">
+                            <h3 class="solution-detail-item-title">数据沉淀之后的清洗、挖掘分析</h3>
+                            <p class="solution-detail-item-text">直观清晰的业务数据报表，高颜值的大屏数据。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_4_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/shopSolution" class="solution-btn">了解方案</a> -->
+                        </div>
+                        <!-- 人工智能无处不在 -->
+                        <div class="solution-detail-item">
+                            <h3 class="solution-detail-item-title">人工智能无处不在</h3>
+                            <p class="solution-detail-item-text">聊天机器人助手协助处理各类工作，人岗智能匹配让你高效的找到适合的候选人。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_3_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/marketSolution" class="solution-btn">了解方案</a> -->
+                        </div>
+
+                        <!-- 多语言支持，适合出海 -->
+                        <div class="solution-detail-item car-solution-detail-item">
+                            <h3 class="solution-detail-item-title">多语言支持，适合出海</h3>
+                            <p class="solution-detail-item-text">越来越多的人力资源公司出海，国际化成为标配。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/index_car_5_6_1_icon@2x.png" />
+                                </li>
+                            </ul>
+                            <a href="/console/v2/signup#/" class="solution-btn primary">免费试用</a>
+                            <!-- <a href="/website/autoServiceSolution" class="solution-btn">了解方案</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-mobile">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">从手工/Excel作业方式进入到系统化</h3>
+                            <p class="text">通过对系统的运用，让整个公司的数据不再散落在各地，尤其员工数据、业务相关数据、财务相关数据能得到沉淀</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_1_1_icon_new.png" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">通过工作流引擎，让企业各部门之间的协同变得简单</h3>
+                            <p class="text">业务开展过程中的各类申请、审批，从线下低效沟通协调，到线上高效协同。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_2_1_icon_new.png" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">随时随地在手机上完成业务环节</h3>
+                            <p class="text">为员工提供移动端自助服务，更具实效性、便捷性。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_5_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">数据沉淀之后的清洗、挖掘分析</h3>
+                            <p class="text">直观清晰的业务数据报表，高颜值的大屏数据。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_4_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">人工智能无处不在</h3>
+                            <p class="text">聊天机器人助手协助处理各类工作，人岗智能匹配让你高效的找到适合的候选人。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/5_3_1_icon_new@2x.png" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide solution-item">
+                            <h3 class="title">多语言支持，适合出海</h3>
+                            <p class="text">越来越多的人力资源公司出海，国际化成为标配。</p>
+                            <ul class="solution-detail-item-way">
+                                <li>
+                                    <img class="img-pc" src="../website/common/images/index/icon_2x/index_car_5_6_1_icon@2x.png" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 活科云 - 让每个企业都拥有自己的移动电商平台 -->
+        <div class="freeTrial-content">
+            <div class="bg-content">
+                <div class="mainStyle">
+                    <h1 class="freeTrial-h">活科云 — 助力企业数字化转型</h1>
+                    <h1 class="freeTrial-h-moble">活科云 — 助力企业数字化转型</h1>
+                    <a href="/console/v2/signup#/" class="freeTrialBtn">免费试用</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="mainStyle footer-content">
+                <ul class="footer-nav">
+                    <li class="head">资讯栏目</li>
+                    <li><a href="/cms">上海APP开发公司</a></li>
+                    <li><a href="/cms/appkaifa">APP开发费用</a></li>
+                    <li><a href="/cms/shop">商城APP开发</a></li>
+                    <li><a href="/cms/xcx">小程序开发</a></li>
+                    <li><a href="/cms/xls">新零售解决方案</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">活科云</li>
+                    <li><a href="/website/index.htmlOld.html">APP开发</a></li>
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="/website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper.html">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">公司</li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy.html">使用协议</a></li>
+                </ul>
+
+                <ul class="footer-nav qwrz">
+                    <li class="head">权威认证</li>
+                    <li class="address-text">软件企业<br> 认定号：沪RQ-2018-0317
+                    </li>
+                    <li class="address-text">高新技术企业<br> 认定号：GR201831000177
+                    </li>
+                </ul>
+
+                <div class="address">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                    <div class="phone-number phone-number-dingzhi leap__phone-text">400-158-0151</div>
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="https://www.leapcloud.cn/">https://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <p>关注活科云</p>
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/emeima_footer.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/emeima_footer@2x.png 2x" alt="活科云">
+                </div>
+            </div>
+            <div class="footer-fix">
+                <div class="footer-context">
+                    <i class="clearmid"></i>
+                    <span class="context-left">咨询电话:</span>
+                    <span class="context-center leap__phone-text">400-158-0151</span>
+                    <div class="context-btn" onclick="show53KFPanel()">
+                        <span class="zixun-text">在线咨询</span>
+                        <i class="zixun-icon"></i>
+                    </div>
+                </div>
+                <span class="close-btn">×</span>
+            </div>
+        </div>
+        <div class="copyRightIndex">
+            <p>© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> | 增值电信业务经营许可证：B2-20191167</p>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                <span>沪公网安备 31010402007726号</span>
+            </a>
+        </div>
+
+        <div id="footer-mobile">
+            <div class="mainStyle footer-content-mobile">
+                <ul class="footer-nav">
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="/website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper.html">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li><a href="/website/index.htmlOld.html">APP开发</a></li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy.html">使用协议</a></li>
+                </ul>
+                <div class="phoneInfo">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                </div>
+                <div class="addressInfo">
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="http://www.leapcloud.cn/">http://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/website/emeima_footer_new.png" alt="活科云">
+                    <p>关注活科云</p>
+                </div>
+            </div>
+            <div class="copyRightIndex">© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> <br> 增值电信业务经营许可证：B2-20191167
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                    <span>沪公网安备 31010402007726号</span>
+                </a>
+            </div>
+            <!-- <div class="mobile-footer">
+        <div class="footer-box">
+            <a class="footer-phone leap__phone-call" data-agl-cvt="2" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png 2x"></span></div>
+                <span class="text-box">电话咨询</span>
+            </a>
+            <a class="cut-line"></a>
+            <div class="footer-online" onclick="_MEIQIA('showPanel')">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png 2x"></span></div>
+                <span class="text-box">在线咨询</span>
+            </div>
+            <a class="cut-line"></a>
+            <a class="footer-phone" href="https://www.leapcloud.cn/console/v2/signup#/" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png 2x"></span></div>
+                <span class="text-box">立即体验</span>
+            </a>
+        </div>
+    </div> -->
+        </div>
+
+        <!-- <div id="righter" >
+    <div class="cube common-cube" >
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube merchants-cube" style="display: none">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube dingzhi-cube">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <a class="cube" href='/console/v2/signup#/' >
+        <div class="sicon login"></div>
+        <p >免费试用</p>
+    </a>
+    <a class="cube" href="/website/merchants" >
+        <div class="sicon join"></div>
+        <p >代理合作</p>
+    </a>
+    <a class="cube zixun-right" onclick="show53KFPanel()">
+        <div class="sicon zixun-icon-right"></div>
+        <p>在线咨询</p>
+    </a>
+    <div class="cube video" href="" >
+        <div class="sicon  video-icon"></div>
+        <p>视频介绍</p>
+        <div class="right-alert">活科云视频</div>
+    </a>
+</div> -->
+
+
+        <script src='./website/javascript/lib/jquery/jquery.min.js'></script>
+        <script src='./website/javascript/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.cookie.js'></script>
+        <script src='./website/javascript/lib/store/dist/store2.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.validate.min.js'></script>
+        <script src='./website/javascript/lib/selectUI/js/select-widget-min.js'></script>
+        <script src="./website/javascript/website/common/utils.3.1.0.js"></script>
+        <script src="./website/javascript/website/common/init.3.1.0.js"></script>
+        <script src='./website/javascript/website/common/phoneChange.3.1.0.js'></script>
+
+        <script>
+            $(function() {
+                $(".close-btn").click(function() {
+                    $(".footer-fix").css("display", "none");
+                    $(".copyRightIndex").removeClass("copyRightIndex").addClass("originCopyRightIndex");
+                })
+            });
+        </script>
+        <script>
+            window.__ENV__MAXWON = {
+                "env": "PROD"
+            }
+            window.version = "3.1.0"
+        </script>
+
+        <script src='./website/javascript/lib/Swiper-3.4.2/dist/js/swiper.jquery.min.js'></script>
+        <script src='./website/javascript/website/index.3.1.0.js'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-70747550-7', {
+                'custom_map': {
+                    'dimension1': 'utm_source',
+                    'dimension2': 'utm_campaign',
+                    'dimension3': 'utm_medium',
+                    'dimension4': 'utm_term',
+                    'dimension5': 'utm_content',
+                    'dimension6': 'phone', // 客户的手机号
+                    'dimension7': 'href',
+                    'dimension8': 'landingPage',
+                    'dimension9': 'meiqiaVisitId',
+                    'dimension10': 'baiduId',
+                    'dimension11': 'caseId', // 来源案例 Id
+                    // 'dimension12': 'userId',
+                    // 'dimension13': 'appId',
+                    'dimension14': 'companyName',
+                    'dimension15': 'smsCode',
+                    'dimension16': 'consultPhone', // 400 电话
+                    'dimension17': 'utm_term_keyword',
+                    'dimension18': 'utm_plan',
+                }
+            })
+        </script>
+
+        <script>
+            (function() {
+                var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                qsObject.href = window.location.href;
+                gtag('event', 'leap_pageview', qsObject);
+            }())
+
+            $(function() {
+                $('a.leap__phone-call').on('click', function() {
+                    var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                    qsObject.consultPhone = window.leapServicePhone
+                    gtag('event', 'consult_phone_click', qsObject);
+                    window.location.href = 'tel:' + window.leapServicePhone
+                })
+            })
+        </script>
+
+</body>
+
+</html>

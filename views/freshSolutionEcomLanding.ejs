@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+
+<html>
+
+<head>
+    <title>商领云-生鲜到家解决方案</title>
+    <meta name="keywords" content="生鲜、SaaS、即时配送" />
+    <meta name="description" content="商领云一站式生鲜配送解决方案，致力于为商家提供全渠道新零售SaaS生鲜零售解决方案，通过自建小程序+APP商城，融合营销、配送、社区团购、会员系统，帮助企业快速实现流量整合，粉丝沉淀，提高运营效率，提升坪效">
+    <link rel="stylesheet" href="./website/stylesheets/freshSolutionEcomLanding.3.1.0.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="./website/common/images/favicon.ico">
+    <link rel="stylesheet" href="./website/common/images/font-icons/style.css">
+
+    <!--<link rel="stylesheet" href="/javascript/lib/selectUI/css/drop-down.css">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="index,follow" name="Baiduspider">
+    <meta content="index,follow" name="robots">
+
+    <!--fundebuger-->
+    <!--<script src="https://js.fundebug.cn/fundebug.0.3.5.min.js" apikey="9972fb57226b9445f62cd08fcdf8f74c3d2f6e2d64a18b908fd53bf9f339c3b0"></script>-->
+    <script src="./website/javascript/vendor/adaptive-master/js/adaptive.js"></script>
+
+    <script type="text/javascript">
+        function checkBrowser(v) {
+            var userAgent = navigator.userAgent.toLowerCase(),
+                low = false;
+            if (isChromium(userAgent)) {
+                low = chromium(userAgent, v.GG);
+            } else if (isWebkit(userAgent)) {
+                //            low = Safari(userAgent, v.Safari);
+            } else if (isFireFox(userAgent)) {
+                low = FireFox(userAgent, v.FF)
+            } else if (isIE) {
+                low = IE(v.IE)
+            } else {
+                low = true;
+            }
+            checkjump(low)
+        }
+
+        function checkjump(low) {
+            // if(low) window.location.href = "/outdatedbrowser" + window.location.search + "?version=001";
+            if (low) window.location.href = "/outdatedbrowser/zh_cn.html";
+        }
+
+        //    function Safari(userAgent, v) {
+        ////        var version = userAgent.match(/version\/([\d.]+)/);
+        //        console.log("safair"+ version);
+        //        return parseInt(version) < v;
+        //    }
+
+        function FireFox(userAgent, v) {
+            var version = userAgent.match(/firefox\/([\d.]+)/)[1];
+            return parseInt(version) < v;
+        }
+
+        function chromium(userAgent, v) {
+            var version = userAgent.match(/chrome\/([\d.]+)/)[1];
+            var versionNum = version.split(".")[0];
+            return parseInt(versionNum) < v;
+        }
+
+        function IE(v) {
+            var version = 999999;
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent);
+                version = parseInt(RegExp.$1);
+            } else if ("ActiveXObject" in window) {
+                version = 11;
+            }
+            return parseInt(version) < v;
+        };
+        // 判断是否为chrome内核浏览器
+        function isChromium(userAgent) {
+            var chromium = "mozilla/&&applewebkit/&&chrome/&&safari/".split("&&");
+            for (var i = 0; i < chromium.length; i++)
+                if (userAgent.indexOf(chromium[i]) < 0)
+                    return false;
+            return true;
+        }
+
+        // 判断是否为webkit内核浏览器
+        function isWebkit(userAgent) {
+            if (userAgent.indexOf("applewebkit/") < 0)
+                return false;
+            return true;
+        }
+
+        function isFireFox(userAgent) {
+            if (userAgent.indexOf("firefox/") < 0)
+                return false;
+            return true;
+        }
+
+        function isIE(userAgent) {
+            if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0))
+                return true;
+            return false;
+        }
+
+        //检查浏览器
+        checkBrowser({
+            IE: 9,
+            FF: 30,
+            GG: 20,
+            Safari: 4
+        });
+
+        // //隐身模式判断
+        // try {
+        //     window.localStorage.setItem('testkey', '');
+        // } catch (error) {
+        //     if (window.locale === 'zh') {
+        //         alert("请关闭隐身模式");
+        //     } else {
+        //         alert("Please exit private mode");
+        //     }
+        // }
+    </script>
+
+</head>
+
+<body>
+    <%- include("components/header") %>
+        <!--banner-->
+        <div class="banner-container">
+            <div class="banner-content mainStyle">
+                <h1>商领云生鲜到家解决方案</h1>
+                <p class="text">专业的生鲜到家解决方案，为您搭建一站式、全渠道的生鲜电商平台</p>
+                <p class="text-mobile">为您搭建线上商城，开拓线上运营能力<br/>整合线下业务，实现数字化升级</p>
+                <a class="freeBtn">免费试用</a>
+                <div class="banner-img freshBanner-img">
+                    <img class="banner-img-left" src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/banner_left_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/banner_left_img@2x.png"
+                        alt="">
+                    <img class="banner-img-right" src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/banner_right_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/banner_right_img@2x.png">
+                </div>
+                <div class="banner-img-mobile">
+                    <img class="banner-img-left fresh-banner-img-left" src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/banner_up_img.png" alt="">
+                    <img class="banner-img-right fresh-banner-img-left" src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/banner_down_img.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="placeholder-block" id="navHref"></div>
+        <div class="nav bg-white" id="nav">
+            <a data-anchor="company">赋能企业</a>
+            <a data-anchor="func">功能亮点</a>
+            <a data-anchor="case">行业案例</a>
+        </div>
+        <!-- 赋能企业- 多渠道开店 -->
+        <div id="company" class="module01-container module-func bg-white">
+            <div class="module-func__left">
+                <div class="module-func__desc">
+                    <div class="module-func__title">
+                        多渠道开店<br/>一站式实现多平台流量获取
+                    </div>
+                    <div class="module-func__subTitle">小程序、iOS、安卓、移动官网</div>
+                    <div class="module-func__subTitle">多个销售渠道一站式覆盖，打造企业私域流量平台</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="module-func__right module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/1_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/1_img@2x.png" alt="">
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile">多渠道开店<br/>一站式实现多平台流量获取</div>
+                <div class="module01-subtitle-mobile spec-module01-title">小程序、iOS、安卓、移动官网<br/>多个销售渠道一站式覆盖，打造企业私域流量平台</div>
+                <div class="module-func__mobileImg mobileImg-one">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/1_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 丰富的营销玩法，实现低成本 -->
+        <div class="module01-container module-func">
+            <div class="module-func__left module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/2_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/2_img@2x.png" alt="">
+            </div>
+            <div class="module-func__right">
+                <div class="module-func__desc">
+                    <div class="module-func__title">
+                        丰富的营销玩法，实现低成本<br/> 获取流量、快速提升销量、<br/>促进用户留存
+                    </div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile spec-module01-title">
+                    丰富的营销玩法<br> 实现低成本获取流量、快速
+                    <br> 提升销量、促进用户留存
+                </div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/2_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 强大的前置仓系统，自动定位 -->
+        <div class="module01-container module-func bg-white">
+            <div class="module-func__left">
+                <div class="module-func__desc">
+                    <div class="module-func__title">强大的前置仓系统，自动定位<br/>就近区域，提高销售转化</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="module-func__right module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/3_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/3_img@2x.png" alt="">
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile spec-module01-title">
+                    强大的前置仓系统<br/> 自动定位就近区域，提高销售转化
+                </div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/3_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 多种配送模式，实现即时配送 -->
+        <div class="module01-container module-func">
+            <div class="module-func__left module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/4_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/4_img@2x.png" alt="">
+            </div>
+            <div class="module-func__right">
+                <div class="module-func__desc">
+                    <div class="module-func__title">多种配送模式，实现即时配送<br/>提高服务质量，提高用户留存</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile spec-module01-title">
+                    多种配送模式，实现即时配送<br/> 提高服务质量，提高用户留存
+                </div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/4_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 多维度数字化运营管理 -->
+        <div class="module01-container module-func bg-white">
+            <div class="module-func__left">
+                <div class="module-func__desc">
+                    <div class="module-func__title">多维度数字化运营管理<br/>降本增效</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="module-func__right module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/5_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/5_img@2x.png" alt="">
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile spec-module01-title">多维度数字化运营管理，降本增效</div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/5_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 打破单一获客模式 -->
+        <div id="func" class="module01-container module-func">
+            <div class="module-func__left module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/6_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/6_img@2x.png" alt="">
+            </div>
+            <div class="module-func__right">
+                <div class="module-func__desc">
+                    <div class="module-func__title">打破单一获客模式<br/>多功能多渠道获客</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile spec-module01-title">
+                    打破单一获客模式<br/> 多功能多渠道获客
+                </div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/mobile/6_img.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 会员统一管理 -->
+        <div class="module01-container module-func bg-white">
+            <div class="module-func__left">
+                <div class="module-func__desc">
+                    <div class="module-func__title">会员统一管理</div>
+                    <div class="module-func__subTitle">强大的会员运营系统，有效提升复购</div>
+                    <div class="module-func__freeBtn">
+                        <a class="freeBtn">免费试用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="module-func__right module-func__img">
+                <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/20200806/8_img.png" srclarge="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/20200806/8_img@2x.png" alt="">
+            </div>
+
+            <div class="module-func__mobile">
+                <div class="module01-title-mobile">
+                    会员统一管理
+                </div>
+                <div class="module01-subtitle-mobile spec-module01-title">
+                    强大的会员运营系统，有效提升复购
+                </div>
+                <div class="module-func__mobileImg">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/20200806/8_img_yd.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="module01-container module-resolve">
+            <div class="mainStyle">
+                <div class="module01-title spec-module01-title">相关解决方案</div>
+                <div class="module01-title-mobile spec-module01-title">相关解决方案</div>
+                <div class="module-resolve__content">
+
+                    <a href="/website/freshSolutionLanding" class="module-resolve__item">
+                        <div class="module-resolve__item-icon">
+                            <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/8_ls_icon.png" />
+                        </div>
+                        <div class="module-resolve__item-title">生鲜新零售</div>
+                        <div class="module-resolve__item-desc">
+                            为您搭建线上商城，开拓线上运营能力<br/>整合线下业务，实现数字化升级
+                        </div>
+                    </a>
+
+                    <a href="/website/sqtgSolution" class="module-resolve__item module-resolve__item-center">
+                        <div class="module-resolve__item-icon">
+                            <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/8_sxsqtg_icon.png" />
+                        </div>
+                        <div class="module-resolve__item-title">生鲜社区团购</div>
+                        <div class="module-resolve__item-desc">
+                            全渠道生鲜社区团购平台<br/>一站式解决企业社区团购经营难题
+                        </div>
+                    </a>
+
+                    <a href="/website/freshSolutionOrder" class="module-resolve__item">
+                        <div class="module-resolve__item-icon">
+                            <img src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolutionEcomLanding/pc/8_sxdh_icon.png" />
+                        </div>
+                        <div class="module-resolve__item-title">生鲜订货</div>
+                        <div class="module-resolve__item-desc">
+                            智能的生鲜订货系统，数字化经营管理<br/>助力企业提升效率，降本增效
+                        </div>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--行业案例-->
+        <div id="case" class="bg-white anchor"></div>
+        <div class="client-case">
+            <div class="w1200 mainStyle">
+                <div class="title">
+                    行业案例
+                    <a class="moreCases" href="/website/case.html">更多案例</a>
+                </div>
+                <div class="clients" id="clients">
+                    <div class="client">
+                        <div class="barcode-bg">
+                            <div class="barcode"></div>
+                            <div class="barcode-img"><img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/dashu.png" /></div>
+                            <div class="barcode-tip">扫描浏览</div>
+                        </div>
+                        <div class="barcode"></div>
+                        <div class="client-img"><img src="https://static.leapcloud.cn/web/website/common/images/case/dashu.png" /></div>
+                        <div class="client-title">哒蔬净菜</div>
+                        <div class="client-content">哒蔬净菜，一站式为消费者洗好、理好、切好、搭配好生鲜食品，直送到家，让消费者可以像在饭店点菜一样在APP上买菜。</div>
+                        <div class="client-content-mobile">哒蔬净菜，一站式为消费者洗好、理好、切好、搭配好生鲜食品，直送到家，让消费者可以像在饭店点菜一样在APP上买菜。</div>
+                        <div class="modal-item hide">
+                            <div class="barcode-container hide">
+                                <span class="close"></span>
+                                <img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/dashu.png" />
+                                <p>扫码下载App查看案例</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client">
+                        <div class="barcode-bg">
+                            <div class="barcode"></div>
+                            <div class="barcode-img"><img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/meixianxian.png" /></div>
+                            <div class="barcode-tip">扫描浏览</div>
+                        </div>
+                        <div class="barcode"></div>
+                        <div class="client-img"><img style="border:1px solid #e5e5e5;border-radius: 20px;" src="https://static.leapcloud.cn/web/website/common/images/case/meixianxian.png" /></div>
+                        <div class="client-title">美鲜鲜</div>
+                        <div class="client-content">在美鲜鲜APP商城，客户可以购买新鲜水果，下单直接送货到家，以时尚便捷的购买方式取代传统的店铺选购。平台可为用户提供，便捷的商品信息浏览、在线购买、在线支付、第一手优惠资讯等功能。</div>
+                        <div class="client-content-mobile">在美鲜鲜APP商城，客户可以购买新鲜水果，下单直接送货到家，以时尚便捷的购买方式取代传统的店铺选购。平台可为用户...</div>
+                        <div class="modal-item hide">
+                            <div class="barcode-container hide">
+                                <span class="close"></span>
+                                <img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/meixianxian.png" />
+                                <p>扫码下载App查看案例</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="client">
+                        <div class="barcode-bg">
+                            <div class="barcode"></div>
+                            <div class="barcode-img"><img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/maicaicheng.png" /></div>
+                            <div class="barcode-tip">扫描浏览</div>
+                        </div>
+                        <div class="barcode"></div>
+                        <div class="client-img"><img style="border:1px solid #e5e5e5;border-radius: 20px;" src="https://static.leapcloud.cn/web/website/common/images/solution/freshSolution/maicaicheng-logo.png" /></div>
+                        <div class="client-title">买菜城</div>
+                        <div class="client-content">买菜城是一家以“生鲜电商”为切入口的线上社区超市，通过APP开发技术赋能将线上和线下门店结合，为用户提供涵盖了蔬菜、水果、蛋肉、日用等万种热门商品，原产地直采、自建仓储、冷链配送，让顾客取到优质新鲜的商品，享受实惠的价格。新鲜的各类食材、有格调的甜品小食、琳琅满目的休闲零食，让你体验高品质的生活方式!</div>
+                        <div class="client-content-mobile">“买菜城”是一家以“生鲜电商”为切入口的线上社区超市，通过APP开发技术赋能将线上和线下门店结合，为用户提供涵盖了蔬菜、水果、蛋肉...</div>
+                        <div class="modal-item hide">
+                            <div class="barcode-container hide">
+                                <span class="close"></span>
+                                <img src="https://static.leapcloud.cn/web/website/common/images/solution/newTakeoutSolution/maicaicheng.png" />
+                                <p>扫码下载App查看案例</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--免费试用-->
+        <div class="freeTrial-content">
+            <div class="mainStyle">
+                <h1 class="free-text">一站式搭建自己的生鲜到家平台</h1>
+                <a class="freeTrialBtn">免费试用</a>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="mainStyle footer-content">
+                <ul class="footer-logo">
+                    <li><img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/footer_logo_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/footer_logo_new@2x.png 2x" alt="商领云APP开发公司"></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">资讯栏目</li>
+                    <li><a href="/cms">上海APP开发公司</a></li>
+                    <li><a href="/cms/appkaifa">APP开发费用</a></li>
+                    <li><a href="/cms/shop">商城APP开发</a></li>
+                    <li><a href="/cms/xcx">小程序开发</a></li>
+                    <li><a href="/cms/xls">新零售解决方案</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">商领云</li>
+                    <li><a href="/website/index.htmlOld">APP开发</a></li>
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">公司</li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy">使用协议</a></li>
+                </ul>
+
+                <ul class="footer-nav qwrz">
+                    <li class="head">权威认证</li>
+                    <li class="address-text">软件企业<br> 认定号：沪RQ-2018-0317
+                    </li>
+                    <li class="address-text">高新技术企业<br> 认定号：GR201831000177
+                    </li>
+                </ul>
+
+                <div class="address">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                    <div class="phone-number phone-number-dingzhi leap__phone-text">400-158-0151</div>
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="https://www.leapcloud.cn/">https://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <p>关注商领云</p>
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/emeima_footer.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/emeima_footer@2x.png 2x" alt="商领云">
+                </div>
+            </div>
+            <div class="footer-fix">
+                <div class="footer-context">
+                    <i class="clearmid"></i>
+                    <span class="context-left">咨询电话:</span>
+                    <span class="context-center leap__phone-text">400-158-0151</span>
+                    <div class="context-btn" onclick="show53KFPanel()">
+                        <span class="zixun-text">在线咨询</span>
+                        <i class="zixun-icon"></i>
+                    </div>
+                </div>
+                <span class="close-btn">×</span>
+            </div>
+        </div>
+        <div class="copyRightIndex">
+            <p>© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> | 增值电信业务经营许可证：B2-20191167</p>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                <span>沪公网安备 31010402007726号</span>
+            </a>
+        </div>
+
+        <div id="footer-mobile">
+            <div class="mainStyle footer-content-mobile">
+                <ul class="footer-nav">
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li><a href="/website/index.htmlOld">APP开发</a></li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy">使用协议</a></li>
+                </ul>
+                <div class="phoneInfo">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                </div>
+                <div class="addressInfo">
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="http://www.leapcloud.cn/">http://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/website/emeima_footer_new.png" alt="商领云">
+                    <p>关注商领云</p>
+                </div>
+            </div>
+            <div class="copyRightIndex">© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> <br> 增值电信业务经营许可证：B2-20191167
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                    <span>沪公网安备 31010402007726号</span>
+                </a>
+            </div>
+            <!-- <div class="mobile-footer">
+        <div class="footer-box">
+            <a class="footer-phone leap__phone-call" data-agl-cvt="2" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png 2x"></span></div>
+                <span class="text-box">电话咨询</span>
+            </a>
+            <a class="cut-line"></a>
+            <div class="footer-online" onclick="_MEIQIA('showPanel')">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png 2x"></span></div>
+                <span class="text-box">在线咨询</span>
+            </div>
+            <a class="cut-line"></a>
+            <a class="footer-phone" href="https://www.leapcloud.cn/console/v2/signup#/" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png 2x"></span></div>
+                <span class="text-box">立即体验</span>
+            </a>
+        </div>
+    </div> -->
+        </div>
+
+        <!-- <div id="righter" >
+    <div class="cube common-cube" >
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube merchants-cube" style="display: none">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube dingzhi-cube">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <a class="cube" href='/console/v2/signup#/' >
+        <div class="sicon login"></div>
+        <p >免费试用</p>
+    </a>
+    <a class="cube" href="/website/merchants" >
+        <div class="sicon join"></div>
+        <p >代理合作</p>
+    </a>
+    <a class="cube zixun-right" onclick="show53KFPanel()">
+        <div class="sicon zixun-icon-right"></div>
+        <p>在线咨询</p>
+    </a>
+    <div class="cube video" href="" >
+        <div class="sicon  video-icon"></div>
+        <p>视频介绍</p>
+        <div class="right-alert">商领云视频</div>
+    </a>
+</div> -->
+
+
+        <script src='./website/javascript/lib/jquery/jquery.min.js'></script>
+        <script src='./website/javascript/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.cookie.js'></script>
+        <script src='./website/javascript/lib/store/dist/store2.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.validate.min.js'></script>
+        <script src='./website/javascript/lib/selectUI/js/select-widget-min.js'></script>
+        <script src="./website/javascript/website/common/utils.3.1.0.js"></script>
+        <script src="./website/javascript/website/common/init.3.1.0.js"></script>
+        <script src='./website/javascript/website/common/phoneChange.3.1.0.js'></script>
+
+        <script>
+            $(function() {
+                $(".close-btn").click(function() {
+                    $(".footer-fix").css("display", "none");
+                    $(".copyRightIndex").removeClass("copyRightIndex").addClass("originCopyRightIndex");
+                })
+            });
+        </script>
+        <script>
+            window.__ENV__MAXWON = {
+                "env": "PROD"
+            }
+            window.version = "3.1.0"
+        </script>
+
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-70747550-7', {
+                'custom_map': {
+                    'dimension1': 'utm_source',
+                    'dimension2': 'utm_campaign',
+                    'dimension3': 'utm_medium',
+                    'dimension4': 'utm_term',
+                    'dimension5': 'utm_content',
+                    'dimension6': 'phone', // 客户的手机号
+                    'dimension7': 'href',
+                    'dimension8': 'landingPage',
+                    'dimension9': 'meiqiaVisitId',
+                    'dimension10': 'baiduId',
+                    'dimension11': 'caseId', // 来源案例 Id
+                    // 'dimension12': 'userId',
+                    // 'dimension13': 'appId',
+                    'dimension14': 'companyName',
+                    'dimension15': 'smsCode',
+                    'dimension16': 'consultPhone', // 400 电话
+                    'dimension17': 'utm_term_keyword',
+                    'dimension18': 'utm_plan',
+                }
+            })
+        </script>
+
+        <script>
+            (function() {
+                var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                qsObject.href = window.location.href;
+                gtag('event', 'leap_pageview', qsObject);
+            }())
+
+            $(function() {
+                $('a.leap__phone-call').on('click', function() {
+                    var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                    qsObject.consultPhone = window.leapServicePhone
+                    gtag('event', 'consult_phone_click', qsObject);
+                    window.location.href = 'tel:' + window.leapServicePhone
+                })
+            })
+        </script>
+
+        <script>
+            // 1. 网站在行业解决方案点击免费注册时, 把行业模板信息(id) 传到 注册页面
+            // 2. 注册成功后, 跳转到 console 时带上模板 id
+            // 3. console 根据模板 id 自动导入模板
+
+            // 生鲜电商的appId
+            var ProdAppId = "5ccffdbc54377a00081297cc";
+            var UatAppId = "5ccffdbc54377a00081297cc";
+            //1. 为 banner的免费试用按钮绑定事件
+            $(".freeBtn").click(function(e) {
+                e.preventDefault();
+                //            window.location.href = '/console/v2/signup#/' + '?appId=' + appId;
+                var env;
+                if ((window.__ENV__MAXWON && window.__ENV__MAXWON.env) == 'DEV') {
+                    env = 'dev';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + UatAppId;
+
+                } else if ((window.__ENV__MAXWON && window.__ENV__MAXWON.env) == 'UAT') {
+                    env = 'uat';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + UatAppId;
+                } else {
+                    env = '';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + ProdAppId;
+                }
+
+            });
+
+            //2. 为尾部的免费试用按钮绑定事件
+            $(".freeTrial-content .freeTrialBtn").click(function(e) {
+                e.preventDefault();
+                //            window.location.href = '/console/v2/signup#/' + '?appId=' + appId;
+                var env;
+                if ((window.__ENV__MAXWON && window.__ENV__MAXWON.env) == 'DEV') {
+                    env = 'dev';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + UatAppId;
+
+                } else if ((window.__ENV__MAXWON && window.__ENV__MAXWON.env) == 'UAT') {
+                    env = 'uat';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + UatAppId;
+                } else {
+                    env = '';
+                    //                $.cookie.defaults.path = '/';
+                    //                $.cookie("selectedAppId",UatAppId[index]);
+                    window.location.href = '/console/v2/signup#/' + '?' + 'selectedAppId=' + ProdAppId;
+                }
+
+            });
+
+            $(".client > .barcode").mouseover(function(e) {
+                $(e.currentTarget).siblings(".barcode-bg").fadeIn(500);
+                $(".client > .barcode>img").show();
+            })
+
+            $(".barcode-bg").mouseleave(function(e) {
+                $(e.currentTarget).fadeOut(500);
+            })
+
+            // 手机端案例二维码的展示
+            $('.client').click(function() {
+                $(this).children('.modal-item').removeClass('hide');
+                var that = this;
+                setTimeout(function() {
+                    $(that).children('.modal-item').children('.barcode-container').removeClass('hide');
+                }, 0);
+            })
+            $('.client .modal-item .close').click(function(e) {
+                    $(this).parent().addClass('hide');
+                    $(this).parent().parent().addClass('hide');
+                    e.stopPropagation();
+                })
+                // 遮罩点击关闭二维码展示
+            $('.client .modal-item').click(function(e) {
+                $(this).children('.barcode-container').addClass('hide');
+                $(this).addClass('hide');
+                e.stopPropagation();
+            });
+            //阻止遮罩出现时的滑动行为
+            $('.client .modal-item').on('touchmove', function(e) {
+                e.preventDefault();
+            })
+            $('.client .modal-item .barcode-container').click(function(e) {
+                e.stopPropagation();
+            });
+
+            // 锚点点击滚动
+            $('#nav a').click(function(e) {
+                e.preventDefault();
+                var targetDom = '#' + $(this).attr('data-anchor');
+                var navHeight = $('#nav').outerHeight();
+                var fixed = $(this).parent().hasClass('fixed');
+                var targetTop = $(targetDom).offset().top;
+                if ($(targetDom).offset().top - navHeight > $('#navHref').offset().top && !fixed) {
+                    navHeight *= 2;
+                }
+                $('html,body').animate({
+                    scrollTop: targetTop - navHeight
+                }, 500);
+            });
+
+            function setNavActive() {
+                var top = $('#navHref').offset().top + $('#navHref').height() - $(window).scrollTop();
+                if (top <= 0) {
+                    $('#nav').addClass('fixed');
+                } else {
+                    $('#nav').removeClass('fixed');
+                }
+                var distance = 200;
+                var caseTop = $('#case').offset().top - $(window).scrollTop();
+                if (caseTop < distance) {
+                    $('#nav a').each(function(index) {
+                        $(this).removeClass('active');
+                        if (index === 2) {
+                            $(this).addClass('active');
+                        }
+                    });
+                    return;
+                }
+                var funcTop = $('#func').offset().top - $(window).scrollTop();
+                if (funcTop < distance) {
+                    $('#nav a').each(function(index) {
+                        $(this).removeClass('active');
+                        if (index === 1) {
+                            $(this).addClass('active');
+                        }
+                    });
+                    return;
+                }
+                var shopTop = $('#company').offset().top - $(window).scrollTop();
+                if (shopTop < distance) {
+                    $('#nav a').each(function(index) {
+                        $(this).removeClass('active');
+                        if (index === 0) {
+                            $(this).addClass('active');
+                        }
+                    });
+                }
+            }
+            // 简单的节流函数
+            //fun 要执行的函数
+            //delay 延迟
+            //time  在time时间内必须执行一次
+            function throttle(fun, delay, time) {
+                var timeout,
+                    startTime = new Date();
+                return function() {
+                    var context = this,
+                        args = arguments,
+                        curTime = new Date();
+                    clearTimeout(timeout);
+                    // 如果达到了规定的触发时间间隔，触发 handler
+                    if (curTime - startTime >= time) {
+                        fun.apply(context, args);
+                        startTime = curTime;
+                        // 没达到触发间隔，重新设定定时器
+                    } else {
+                        timeout = setTimeout(function() {
+                            fun.apply(context, args);
+                        }, delay);
+                    }
+                };
+            };
+            // 采用了节流函数
+            window.addEventListener('scroll', throttle(setNavActive, 50, 50));
+            setNavActive();
+        </script>
+</body>
+
+</html>

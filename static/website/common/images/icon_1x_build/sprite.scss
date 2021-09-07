@@ -1,0 +1,99 @@
+$bbs: -172px -394px 41px 39px;
+$cowork_img1: -252px -273px 71px 81px;
+$cowork_img2: -357px -0px 71px 81px;
+$dingdan\@2x: -0px -105px 84px 84px;
+$down\@2x: -191px -357px 70px 37px;
+$dropdown\@2x: -121px -357px 70px 37px;
+$footer-logo: -0px -357px 121px 38px;
+$goTop: -428px -134px 57px 56px;
+$header-control: -494px -67px 27px 27px;
+$huiyuan\@2x: -168px -189px 84px 84px;
+$index_android: -428px -67px 67px 67px;
+$index_apple: -357px -215px 67px 67px;
+$index_appstore: -357px -81px 67px 67px;
+$index_ie: -357px -148px 67px 67px;
+$index_ipad: -357px -282px 67px 67px;
+$index_modules_01: -298px -394px 35px 35px;
+$index_modules_02: -309px -357px 44px 27px;
+$index_modules_03: -353px -357px 47px 24px;
+$index_modules_04: -261px -357px 48px 33px;
+$index_modules_05: -494px -0px 29px 35px;
+$index_modules_06: -0px -441px 31px 32px;
+$index_modules_07: -0px -473px 29px 33px;
+$index_modules_08: -494px -35px 28px 33px;
+$index_modules_09: -31px -441px 31px 31px;
+$index_modules_10: -254px -394px 44px 35px;
+$index_modules_11: -47px -394px 43px 42px;
+$index_modules_12: -402px -394px 40px 29px;
+$index_modules_13: -442px -394px 36px 29px;
+$index_modules_14: -428px -376px 35px 12px;
+$index_wechat: -428px -0px 67px 67px;
+$kefu\@2x: -273px -168px 84px 84px;
+$liaotian\@2x: -273px -84px 84px 84px;
+$live_content\@2x: -273px -0px 84px 84px;
+$live_gift\@2x: -0px -189px 84px 84px;
+$live_sc\@2x: -189px -84px 84px 84px;
+$luntan\@2x: -189px -0px 84px 84px;
+$maxwon-eweima: -0px -0px 105px 105px;
+$meiyan\@2x: -84px -105px 84px 84px;
+$message: -131px -394px 41px 39px;
+$right-qq: -323px -305px 33px 32px;
+$right-rmb: -333px -394px 35px 34px;
+$right-signin: -323px -273px 33px 33px;
+$right-tel: -368px -394px 34px 34px;
+$rmb: -90px -394px 41px 39px;
+$s1: -428px -190px 47px 47px;
+$s2: -428px -237px 47px 47px;
+$s3: -428px -283px 47px 47px;
+$s4: -428px -330px 47px 47px;
+$s5: -0px -394px 47px 47px;
+$sina: -92px -441px 33px 26px;
+$start: -62px -441px 30px 30px;
+$support: -213px -394px 41px 39px;
+$tanmu\@2x: -0px -273px 84px 84px;
+$tuisong\@2x: -84px -273px 84px 84px;
+$yuyue\@2x: -168px -273px 84px 84px;
+$zhibo\@2x: -84px -189px 84px 84px;
+$zhiboquan\@2x: -105px -0px 84px 84px;
+@mixin sprite-width($sprite) {
+    width: nth($sprite, 3);
+}
+
+@mixin sprite-height($sprite) {
+    height: nth($sprite, 4);
+}
+
+@function sprite-width($sprite) {
+    @return nth($sprite, 3);
+}
+
+@function sprite-height($sprite) {
+    @return nth($sprite, 4);
+}
+
+@mixin sprite-position($sprite) {
+    $sprite-offset-x: nth($sprite, 1);
+    $sprite-offset-y: nth($sprite, 2);
+    background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+@mixin sprite($sprite, $display: block) {
+    @include sprite-position($sprite);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: $display;
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+}
+
+.icon {
+    background-image: url('../images/sprite.png');
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .icon {
+        background-image: url('../images/sprite@2x.png');
+        background-size: 523px 505px;
+    }
+}

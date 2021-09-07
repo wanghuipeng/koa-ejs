@@ -1,0 +1,414 @@
+<!doctype html>
+
+
+
+<html>
+
+<head>
+    <title>关于我们－商领云－APP开发|APP制作|电商APP开发|APP代理加盟平台</title>
+    <meta name="keywords" content="商领云，APP开发，APP制作，手机APP制作，商城APP，电商APP开发，B2B2C，APP代理加盟" />
+    <meta name="description" content="商领云，企业移动APP开发云平台，快速开发APP，轻松制作APP，同时拥有iOS+安卓APP，微官网和移动网站，全网营销多渠道覆盖，打造最全面的移动解决方案。">
+    <link rel="stylesheet" href="./website/stylesheets/aboutus.3.1.0.css" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="./website/common/images/favicon.ico">
+    <link rel="stylesheet" href="./website/common/images/font-icons/style.css">
+
+    <!--<link rel="stylesheet" href="/javascript/lib/selectUI/css/drop-down.css">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="index,follow" name="Baiduspider">
+    <meta content="index,follow" name="robots">
+
+    <!--fundebuger-->
+    <!--<script src="https://js.fundebug.cn/fundebug.0.3.5.min.js" apikey="9972fb57226b9445f62cd08fcdf8f74c3d2f6e2d64a18b908fd53bf9f339c3b0"></script>-->
+    <script src="./website/javascript/vendor/adaptive-master/js/adaptive.js"></script>
+
+    <script type="text/javascript">
+        function checkBrowser(v) {
+            var userAgent = navigator.userAgent.toLowerCase(),
+                low = false;
+            if (isChromium(userAgent)) {
+                low = chromium(userAgent, v.GG);
+            } else if (isWebkit(userAgent)) {
+                //            low = Safari(userAgent, v.Safari);
+            } else if (isFireFox(userAgent)) {
+                low = FireFox(userAgent, v.FF)
+            } else if (isIE) {
+                low = IE(v.IE)
+            } else {
+                low = true;
+            }
+            checkjump(low)
+        }
+
+        function checkjump(low) {
+            // if(low) window.location.href = "/outdatedbrowser" + window.location.search + "?version=001";
+            if (low) window.location.href = "/outdatedbrowser/zh_cn.html";
+        }
+
+        //    function Safari(userAgent, v) {
+        ////        var version = userAgent.match(/version\/([\d.]+)/);
+        //        console.log("safair"+ version);
+        //        return parseInt(version) < v;
+        //    }
+
+        function FireFox(userAgent, v) {
+            var version = userAgent.match(/firefox\/([\d.]+)/)[1];
+            return parseInt(version) < v;
+        }
+
+        function chromium(userAgent, v) {
+            var version = userAgent.match(/chrome\/([\d.]+)/)[1];
+            var versionNum = version.split(".")[0];
+            return parseInt(versionNum) < v;
+        }
+
+        function IE(v) {
+            var version = 999999;
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent);
+                version = parseInt(RegExp.$1);
+            } else if ("ActiveXObject" in window) {
+                version = 11;
+            }
+            return parseInt(version) < v;
+        };
+        // 判断是否为chrome内核浏览器
+        function isChromium(userAgent) {
+            var chromium = "mozilla/&&applewebkit/&&chrome/&&safari/".split("&&");
+            for (var i = 0; i < chromium.length; i++)
+                if (userAgent.indexOf(chromium[i]) < 0)
+                    return false;
+            return true;
+        }
+
+        // 判断是否为webkit内核浏览器
+        function isWebkit(userAgent) {
+            if (userAgent.indexOf("applewebkit/") < 0)
+                return false;
+            return true;
+        }
+
+        function isFireFox(userAgent) {
+            if (userAgent.indexOf("firefox/") < 0)
+                return false;
+            return true;
+        }
+
+        function isIE(userAgent) {
+            if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0))
+                return true;
+            return false;
+        }
+
+        //检查浏览器
+        checkBrowser({
+            IE: 9,
+            FF: 30,
+            GG: 20,
+            Safari: 4
+        });
+
+        // //隐身模式判断
+        // try {
+        //     window.localStorage.setItem('testkey', '');
+        // } catch (error) {
+        //     if (window.locale === 'zh') {
+        //         alert("请关闭隐身模式");
+        //     } else {
+        //         alert("Please exit private mode");
+        //     }
+        // }
+    </script>
+
+</head>
+
+<body>
+    <%- include("components/header") %>
+
+        <div class="about-section">
+            <!--关于我们banner-->
+            <div class="about-bgImg"></div>
+            <!--移动端背景图-->
+            <img class="about-mobile-bgImg" src="https://static.leapcloud.cn/web/website/common/images/website/gywm_banner_yd.jpg">
+            <!--关于我们标题-->
+            <div class="about-title mainStyle">关于我们</div>
+            <!--菜单-->
+            <ul class="about-menus mainStyle">
+                <li class="menu-list"><a class="currentMenu" href="/website/aboutus.html">关于我们</a></li>
+                <li class="menu-list"><a href="/website/history">发展历程</a></li>
+                <li class="menu-list"><a href="/website/employee">员工及环境</a></li>
+                <li class="menu-list"><a href="/website/certificate">资质证书</a></li>
+            </ul>
+            <!--向下箭头-->
+            <div class="about-down mainStyle">
+                <div class="down-round">
+                    <div class="arrow-content">
+                        <span class="arrow-line"></span>
+                        <span class="arrow-triangle"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content mainStyle">
+                <div id="aboutus">
+                    <h2>上海力谱宿云信息科技有限公司</h2>
+                    <div class="aboutus_detail">力谱宿云总部在上海，创立于2010年，为企业移动信息化提供领先的移动云服务平台和解决方案。我们秉承用高科技驱动商业创新的理念，在为超过10万家企业提供技术服务。我们的产品融合移动研发、云计算、大数据和人工智能等高新技术，让企业零门槛使用高新技术驱动商业创新。</div>
+                    <div class="aboutus_detail">力谱宿云现有的服务产品包括：商领云 - 企业移动应用云平台（LeapCloud）和迈力云 - 移动业务研发云平台（MaxLeap）。商领云是为商业移动化而研发的云平台，它能够根据企业的商业需求，快速搭建出满足企业需求的移动解决方案，同时生成5端App，包含iOS/安卓App、微商城、小程序和移动网站。除了满足企业商业需求，商领云还提供了强大的云计算和大数据能力。迈力云是力谱宿云历时5年研发出来的云平台，它为移动应用提供后端研发云平台，已经在海外稳定运行3年，支持亿级用户的访问。</div>
+                    <div class="aboutus_detail">上海力谱宿云将围绕国家战略性新兴产业、国家科技创新体系建设要求，提升移动互联领域的专业技术服务能力，发展成为创新型的“企业移动云服务平台”，让企业零门槛应用最新技术，助力企业商业创新！</div>
+
+                    <!--公司图片-->
+                    <img class="about-img" src="https://static.leapcloud.cn/web/website/common/images/website/img_1x/aboutus_img_new@1x.png" srcset="https://static.leapcloud.cn/web/website/common/images/website/img_2x/aboutus_img_new@2x.png 2x" alt="商领云前台">
+                    <!--公司图片移动端-->
+                    <img class="about-img-mobile" src="https://static.leapcloud.cn/web/website/common/images/website/aboutus_img_yd_new.png" alt="商领云前台">
+                    <div class="about-text">
+                        <h2 class="about-h">团队活动</h2>
+                        <span>力谱宿云大家庭活动照 <br> - </span>
+                        <span class="span-mobile">力谱宿云大家庭活动照</span>
+                        <!--<i> - </i>-->
+                    </div>
+                    <img class="about-huanjing" src="https://static.leapcloud.cn/web/website/common/images/website/img_1x/yghd_img_pc_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/website/img_2x/yghd_img_pc_new@2x.png 2x" alt="">
+                    <img class="about-huanjing-mobile" src="https://static.leapcloud.cn/web/website/common/images/website/yghd_img_mobile_new.png" alt="">
+
+                    <div class="contactUS">
+                        <h1 id="title">联系方式</h1>
+                        <h2 class="contactUS-title">上海总部</h2>
+                        <div class="aboutusperson_detail">
+                            地址：上海徐汇区宜山路1009号 创新大楼6楼<br> 电话：<span class="leap__phone-text">400-158-0151</span>
+                            <br> 网站：
+                            <a href="/" target="_blank">https://www.leapcloud.cn</a><br>
+                        </div>
+                    </div>
+                    <div class="company-map" id="map">
+                        <div id="wrap" class="my-map">
+                            <div id="mapContainer"></div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="footer">
+            <div class="mainStyle footer-content">
+                <ul class="footer-logo">
+                    <li><img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/footer_logo_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/footer_logo_new@2x.png 2x" alt="商领云APP开发公司"></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">资讯栏目</li>
+                    <li><a href="/cms">上海APP开发公司</a></li>
+                    <li><a href="/cms/appkaifa">APP开发费用</a></li>
+                    <li><a href="/cms/shop">商城APP开发</a></li>
+                    <li><a href="/cms/xcx">小程序开发</a></li>
+                    <li><a href="/cms/xls">新零售解决方案</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">商领云</li>
+                    <li><a href="/website/index.htmlOld">APP开发</a></li>
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li class="head">公司</li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy">使用协议</a></li>
+                </ul>
+
+                <ul class="footer-nav qwrz">
+                    <li class="head">权威认证</li>
+                    <li class="address-text">软件企业<br> 认定号：沪RQ-2018-0317
+                    </li>
+                    <li class="address-text">高新技术企业<br> 认定号：GR201831000177
+                    </li>
+                </ul>
+
+                <div class="address">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                    <div class="phone-number phone-number-dingzhi leap__phone-text">400-158-0151</div>
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="https://www.leapcloud.cn/">https://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <p>关注商领云</p>
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/emeima_footer.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/emeima_footer@2x.png 2x" alt="商领云">
+                </div>
+            </div>
+            <div class="footer-fix">
+                <div class="footer-context">
+                    <i class="clearmid"></i>
+                    <span class="context-left">咨询电话:</span>
+                    <span class="context-center leap__phone-text">400-158-0151</span>
+                    <div class="context-btn" onclick="show53KFPanel()">
+                        <span class="zixun-text">在线咨询</span>
+                        <i class="zixun-icon"></i>
+                    </div>
+                </div>
+                <span class="close-btn">×</span>
+            </div>
+        </div>
+        <div class="copyRightIndex">
+            <p>© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> | 增值电信业务经营许可证：B2-20191167</p>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                <span>沪公网安备 31010402007726号</span>
+            </a>
+        </div>
+
+        <div id="footer-mobile">
+            <div class="mainStyle footer-content-mobile">
+                <ul class="footer-nav">
+                    <li><a href="/website/case.html">案例</a></li>
+                    <li><a href="website/news.html">新闻中心</a></li>
+                    <li><a href="/website/helpcenter.html">文档</a></li>
+                    <li><a href="/website/whitepaper">技术白皮书</a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li><a href="/website/index.htmlOld">APP开发</a></li>
+                    <li><a href="/website/aboutus.html">关于我们</a></li>
+                    <li><a href="/website/useemploy">使用协议</a></li>
+                </ul>
+                <div class="phoneInfo">
+                    <div class="telephone-h">咨询电话</div>
+                    <div class="phone-number leap__phone-text">400-158-0151 </div>
+                </div>
+                <div class="addressInfo">
+                    <div class="address-text">上海徐汇区宜山路1009号 创新大楼6楼 </div>
+                    <a class="maxwon-url" href="http://www.leapcloud.cn/">http://www.leapcloud.cn/</a>
+                </div>
+                <div class="erweima">
+                    <img class="img_erweima" src="https://static.leapcloud.cn/web/website/common/images/website/emeima_footer_new.png" alt="商领云">
+                    <p>关注商领云</p>
+                </div>
+            </div>
+            <div class="copyRightIndex">© 2010-2020 LeapCloud.cn 版权所有 <a href="http://beian.miit.gov.cn" style="display: inline;">沪ICP备15041312号</a> <br> 增值电信业务经营许可证：B2-20191167
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402007726" target="_blank">
+                    <img src="https://static.leapcloud.cn/web/website/common/images/footer/icon_1x/gwa.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/icon_2x/gwa@2x.png 2x" />
+                    <span>沪公网安备 31010402007726号</span>
+                </a>
+            </div>
+            <!-- <div class="mobile-footer">
+        <div class="footer-box">
+            <a class="footer-phone leap__phone-call" data-agl-cvt="2" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/iphone_icon_new.png 2x"></span></div>
+                <span class="text-box">电话咨询</span>
+            </a>
+            <a class="cut-line"></a>
+            <div class="footer-online" onclick="_MEIQIA('showPanel')">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/online_icon_new.png 2x"></span></div>
+                <span class="text-box">在线咨询</span>
+            </div>
+            <a class="cut-line"></a>
+            <a class="footer-phone" href="https://www.leapcloud.cn/console/v2/signup#/" onclick="javascript:void(0)">
+                <div class="img-box"><img src="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png" srcset="https://static.leapcloud.cn/web/website/common/images/footer/edit-fill.png 2x"></span></div>
+                <span class="text-box">立即体验</span>
+            </a>
+        </div>
+    </div> -->
+        </div>
+
+        <!-- <div id="righter" >
+    <div class="cube common-cube" >
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube merchants-cube" style="display: none">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <div class="cube dingzhi-cube">
+        <div class="sicon tel"></div>
+        <p>电话咨询</p>
+        <div class="right-alert leap__phone-text">400-158-0151</div>
+    </div>
+    <a class="cube" href='/console/v2/signup#/' >
+        <div class="sicon login"></div>
+        <p >免费试用</p>
+    </a>
+    <a class="cube" href="/website/merchants" >
+        <div class="sicon join"></div>
+        <p >代理合作</p>
+    </a>
+    <a class="cube zixun-right" onclick="show53KFPanel()">
+        <div class="sicon zixun-icon-right"></div>
+        <p>在线咨询</p>
+    </a>
+    <div class="cube video" href="" >
+        <div class="sicon  video-icon"></div>
+        <p>视频介绍</p>
+        <div class="right-alert">商领云视频</div>
+    </a>
+</div> -->
+
+
+        <script src='./website/javascript/lib/jquery/jquery.min.js'></script>
+        <script src='./website/javascript/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.cookie.js'></script>
+        <script src='./website/javascript/lib/store/dist/store2.min.js'></script>
+        <script src='./website/javascript/lib/jquery/jquery.validate.min.js'></script>
+        <script src='./website/javascript/lib/selectUI/js/select-widget-min.js'></script>
+        <script src="./website/javascript/website/common/utils.3.1.0.js"></script>
+        <script src="./website/javascript/website/common/init.3.1.0.js"></script>
+        <script src='./website/javascript/website/common/phoneChange.3.1.0.js'></script>
+
+        <script>
+            $(function() {
+                $(".close-btn").click(function() {
+                    $(".footer-fix").css("display", "none");
+                    $(".copyRightIndex").removeClass("copyRightIndex").addClass("originCopyRightIndex");
+                })
+            });
+        </script>
+        <!--接入美洽-->
+        <!-- <script type='text/javascript'>
+    (function(a, b, c, d, e, j, s) {
+        a[d] = a[d] || function() {
+            (a[d].a = a[d].a || []).push(arguments)
+        };
+        j = b.createElement(c),
+            s = b.getElementsByTagName(c)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = 'https://static.meiqia.com/widget/loader.js';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', '8292b2fa7ac8fd914580db3a1f1d537b');
+    _MEIQIA('withoutBtn');
+</script> -->
+        <script>
+            window.__ENV__MAXWON = {
+                "env": "PROD"
+            }
+            window.version = "3.1.0"
+        </script>
+
+        <script src='./website/javascript/website/about.3.1.0.js'></script>
+
+        <script>
+            (function() {
+                var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                qsObject.href = window.location.href;
+                gtag('event', 'leap_pageview', qsObject);
+            }())
+
+            $(function() {
+                $('a.leap__phone-call').on('click', function() {
+                    var qsObject = LeapUtils.getGtagDimensionCommonParams();
+                    qsObject.consultPhone = window.leapServicePhone
+                    gtag('event', 'consult_phone_click', qsObject);
+                    window.location.href = 'tel:' + window.leapServicePhone
+                })
+            })
+        </script>
+</body>
+
+</html>
