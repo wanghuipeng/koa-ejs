@@ -9,7 +9,7 @@ axios.defaults.headers.get['Content-Type'] = 'application/json;charset=UTF-8'
 // 添加请求拦截器
 axios.interceptors.request.use((config) => {
     // 在发送请求之前做
-    const token = '17f4749c101748e2a552322ad4b4ab5e'
+    const token = '475101e656f847468fe546fd1ae3e973'
     if (token) {
         config.headers['x-client-token'] = token // 让每个请求携带自定义 token 请根据实际情况自行修改
     }
@@ -24,7 +24,6 @@ router.get('/', async ctx => {
     // console.log('中间层请求第三方接口', res1.data.data.companyName)
     // await ctx.render('index', { title: res1.data.data.companyName })
     await ctx.render('index', { title: '活科云——技术赋能商业领跑者' })
-
 })
 
 router.get('/aboutus', async ctx => {

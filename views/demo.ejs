@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title><%=title%></title>
+    <title>
+        <%=title%>
+    </title>
 
     <!-- Bootstrap -->
     <link href="static/bootstrapcss/css/bootstrap.min.css" rel="stylesheet">
@@ -16,13 +19,41 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <h1>你好，世界！</h1>
+</head>
+
+<body>
+    <h1>你好，世界！
+
+    </h1>
+
+    <ul style="clear: both;">
+        <% tableData.forEach(function(item,index){%>
+            <li data-id="<%= index %>" style="float: left; margin:0 10px;">
+                <%= index %>
+                    <img style="width:100px" src="<%= item %>" />
+
+            </li>
+            <% })%>
+    </ul>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/bootstrapcss/js/bootstrap.min.js"></script>
-  </body>
+    <script>
+        (function() {
+            var _53code = document.createElement("script");
+            _53code.src = "https://tb.53kf.com/code/code/2987b5b881b17bc07f2cd721cde45bf07/1";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(_53code, s);
+        })();
+
+        function show53KFPanel() {
+            window.open('https://tb.53kf.com/code/client/2987b5b881b17bc07f2cd721cde45bf07/1')
+        }
+    </script>
+</body>
+
 </html>
