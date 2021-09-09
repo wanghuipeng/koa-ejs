@@ -15,13 +15,13 @@ axios.interceptors.request.use((config) => {
     }
     return config
 }, (err) => {
-    // 对请求错误做些什么
+    // 对请求错误做些什么   
     return Promise.reject(err)
 })
 
 router.get('/demo', async ctx => {
     let res = null
-    let params = { "pageNumber": 1, "pageSize": 100 }
+    let params = { "pageNumber": 1, "pageSize": 30 }
     try {
         res = await axios.post('https://h.dalieyingcai.com/api/position/getPositionList', params);
     } catch (error) {
@@ -33,9 +33,10 @@ router.get('/demo', async ctx => {
         records && records.filter(item => {
             imgs.push(item.logoImg)
         })
-        console.log('中间层请求第三方接口', imgs)
+        console.log('中间层请求第三方接口', imgs.length)
         await ctx.render('demo', { title: 'demo页面', tableData: imgs })
     }
 })
+
 
 module.exports = router

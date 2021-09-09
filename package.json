@@ -1,31 +1,33 @@
 {
-    "name": "MyProject",
-    "version": "1.0.0",
-    "description": "MyProject",
-    "main": "app.js",
-    "directories": {
-        "lib": "lib"
-    },
-    "scripts": {
-        "dev": "supervisor --harmony index",
-        "test": "./node_modules/mocha/bin/mocha --harmony test"
-    },
-    "author": "wanghuipeng",
-    "license": "MIT",
-    "dependencies": {
-        "axios": "^0.21.1",
-        "config-lite": "^2.0.0",
-        "ejs": "^2.5.6",
-        "koa": "^2.3.0",
-        "koa-bodyparser": "^4.2.0",
-        "koa-router": "^7.2.1",
-        "koa-session-minimal": "^3.0.4",
-        "koa-static": "^4.0.0",
-        "koa-static-cache": "^5.1.1",
-        "koa-views": "^6.0.2"
-    },
-    "devDependencies": {
-        "chai": "^4.1.2",
-        "mocha": "^4.0.1"
-    }
+  "name": "MyProject",
+  "version": "1.0.0",
+  "description": "MyProject",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "supervisor --harmony index",
+    "test": "./node_modules/mocha/bin/mocha --harmony test"
+  },
+  "author": "wanghuipeng",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "browser-sync": "^2.27.5",
+    "config-lite": "^2.0.0",
+    "ejs": "^2.5.6",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^4.0.0",
+    "koa-static-cache": "^5.1.1",
+    "koa-views": "^6.0.2",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
 }
