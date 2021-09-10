@@ -10,11 +10,11 @@
         "js": "node --harmony"
     },
     "watch": [
-        "views/**",
-        "routers/*"
+        "routers/*",
+        "views/*"
     ],
     "env": {
         "NODE_ENV": "development"
     },
-    "ext": "ejs js json"
+    "ext": "js ejs json"
 }

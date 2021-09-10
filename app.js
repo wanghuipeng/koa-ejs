@@ -6,20 +6,6 @@ const app = new Koa()
 const staticCache = require('koa-static-cache')
 const views = require('koa-views');
 
-// 启动监听（浏览器端）
-var bs = require('browser-sync').create();
-app.listen(3002, function() {
-    bs.init({
-        open: false,
-        ui: false,
-        notify: false,
-        proxy: 'localhost:3002',
-        files: ['./views/**', './routers/*'],
-        port: 8080
-    });
-    console.log('前端浏览器刷新', 'App (dev) is going to be running on port 8080 (by browsersync).');
-});
-
 // 缓存
 app.use(staticCache(path.join(__dirname, './public'), { dynamic: true }, {
     maxAge: 365 * 24 * 60 * 60
@@ -43,6 +29,21 @@ app.use(bodyParser({
 app.use(require('./routers/demo.js').routes())
 app.use(require('./routers/index.js').routes())
 
+// 启动监听（浏览器端）
+var bs = require('browser-sync').create();
+app.listen(3002, function() {
+    bs.init({
+        open: false,
+        ui: false,
+        notify: false,
+        proxy: 'localhost:3002',
+        files: ['./views/**',
+            './routers/**'
+        ],
+        port: 8080
+    });
+    console.log('前端浏览器刷新', 'App (dev) is going to be running on port 8080 (by browsersync).');
+});
 
 
 

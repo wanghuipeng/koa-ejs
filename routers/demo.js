@@ -5,6 +5,11 @@ axios.defaults.withCredentials = true
 axios.defaults.baseURL = '/api'
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 axios.defaults.headers.get['Content-Type'] = 'application/json;charset=UTF-8'
+axios.create({
+    headers: {
+        'Cache-Control': 'no-cache'
+    }
+});
 
 // 添加请求拦截器
 axios.interceptors.request.use((config) => {
@@ -21,7 +26,7 @@ axios.interceptors.request.use((config) => {
 
 router.get('/demo', async ctx => {
     let res = null
-    let params = { "pageNumber": 1, "pageSize": 30 }
+    let params = { "pageNumber": 1, "pageSize": 10 }
     try {
         res = await axios.post('https://h.dalieyingcai.com/api/position/getPositionList', params);
     } catch (error) {
