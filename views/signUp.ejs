@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=zh>
+
+<head>
+    <title>申请体验－商领云－APP开发|APP制作|电商APP开发|APP代理加盟平台</title>
+    <meta name=keywords content=商领云，APP开发，APP制作，手机APP制作，商城APP，电商APP开发，B2B2C，APP代理加盟>
+    <meta name=description content=商领云，企业移动APP开发云平台，快速开发APP，轻松制作APP，同时拥有iOS+安卓APP，微官网和移动网站，全网营销多渠道覆盖，打造最全面的移动解决方案。>
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta charset=utf-8>
+    <meta property=qc:admins content=215146377565101003636>
+    <link rel="shortcut icon" href=https://static.leapcloud.cn/web/website/common/images/favicon.ico>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta content=index,follow name=Baiduspider>
+    <meta content=index,follow name=robots>
+    <script src=https://ssl.captcha.qq.com/TCaptcha.js></script>
+    <link href=https://webcdn.leapcloud.cn/console/v2/css/chunk-vendors.8edb0d50.css rel=stylesheet>
+    <link href=https://webcdn.leapcloud.cn/console/v2/css/chunk-common.2e8ac3e8.css rel=stylesheet>
+    <link href=https://webcdn.leapcloud.cn/console/v2/css/signup_v1.4c3f4937.css rel=stylesheet>
+    <style rel="stylesheet" type="text/css">
+        .form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin: 0 auto;
+            width: 200px;
+        }
+        
+        .form input {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <% if (!message) { %>
+        <form action="/toSingUp" method="post">
+            <div class="form">
+                <input type="text" name="telephone" placeholder="请填写手机号">
+                <input type="text" name="password" placeholder="请填写密码">
+                <input type="text" name="companyName" placeholder="请填写公司名称">
+                <button type="submit">提交</button>
+            </div>
+        </form>
+        <%} else { %>
+            <p>
+                <%= message %>
+            </p>
+            <% } %>
+
+</body>
+
+</html>
