@@ -10,8 +10,15 @@ axios.create({
         'Cache-Control': 'no-cache'
     }
 });
+const os = require('os')
+const cup = os.cpus()
+console.log('cpu几核', cup.length)
+const total = os.totalmem()
+console.log('总内存', total / 1024 / 1024 / 1024)
 
-// 添加请求拦截器
+const free = os.freemem()
+console.log('剩余内存', free / 1024 / 1024 / 1024)
+    // 添加请求拦截器
 axios.interceptors.request.use((config) => {
     // 在发送请求之前做
     const token = 'abea386c6b0f409e85f26eb6bf63500e'
