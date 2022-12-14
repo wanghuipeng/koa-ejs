@@ -20,10 +20,10 @@ axios.interceptors.request.use((config) => {
 })
 
 router.get('/', async ctx => {
-    // const res1 = await axios.get('https://h.dalieyingcai.com/api/ucenter/auth/getCurrentUserInfo?userId=100196');
-    // console.log('中间层请求第三方接口', res1.data.data.companyName)
-    // await ctx.render('index', { title: res1.data.data.companyName })
-    await ctx.render('index', { title: '活科云——技术赋能商业领跑者' })
+    const res1 = await axios.get('http://corp.hrotest.huokesaas.com/api/code/common/jobType.json');
+    console.log('中间层请求第三方接口', res1.data)
+    await ctx.render('index', { title: res1.data[0].text })
+    //await ctx.render('index', { title: '活科云——技术赋能商业领跑者' })
 })
 
 router.get('/aboutus', async ctx => {
